@@ -124,8 +124,10 @@ def teste_t(dados_x: list, dados_y:list):
     # Cálculo do Teste T usando os dados de X e Y
     valor_t, p = stats.ttest_ind(dados_x,dados_y)
 
-    print('\nTeste t')
-    print(valor_t)
+    if p>=0.05:
+        print(f'\nCom 95% de confianca, aceitamos a hipotese de medias iguais, considerando o valor p=[{p}]')
+    else:
+        print(f'\nCom 95% de confianca, rejeitamos a hipotese de medias iguais, considerando o valor p=[{p}]')
 
 
 if __name__ == '__main__':
